@@ -1,28 +1,24 @@
 package com.example.email_app.Activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.email_app.R;
 import com.example.email_app.Utils.IntentHelper;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText email_id, password, confirmPassword;
+    private TextInputEditText email_id, password, confirmPassword;
     private Button registerBtn;
     private TextView loginText;
     private ProgressBar progressBar;
@@ -37,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.confirmPassword);
 
-        loginText = findViewById(R.id.login);
+        loginText = findViewById(R.id.loginText);
         loginText.setOnClickListener(this);
 
         registerBtn = findViewById(R.id.register);
@@ -117,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.register:
                 userRegister();
                 break;
-            case R.id.login:
+            case R.id.loginText:
                 IntentHelper intentHelper = new IntentHelper(RegisterActivity.this);
                 intentHelper.GoToLogin();
                 finish();
