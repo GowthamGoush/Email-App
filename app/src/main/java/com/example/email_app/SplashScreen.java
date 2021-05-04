@@ -22,7 +22,8 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 IntentHelper intentHelper = new IntentHelper(SplashScreen.this);
                 intentHelper.GoToRegister();
+                finish();
             }
-        },2000);
+        },2200);
     }
 }
