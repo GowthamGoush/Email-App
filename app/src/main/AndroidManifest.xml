@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.email_app" >
+    package="com.example.email_app">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,11 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EmailApp" >
-        <activity android:name=".Activities.LoginActivity" >
-        </activity>
+        android:theme="@style/Theme.EmailApp">
+        <activity android:name=".Activities.ImageActivity"></activity>
+        <activity android:name=".Activities.LoginActivity"></activity>
         <activity android:name=".Activities.RegisterActivity" />
-        <activity android:name=".SplashScreen" >
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
