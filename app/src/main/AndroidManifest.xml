@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EmailApp">
+        android:theme="@style/Theme.EmailApp.NoActionBar">
         <activity android:name=".Activities.ImageActivity"></activity>
         <activity android:name=".Activities.LoginActivity"></activity>
         <activity android:name=".Activities.RegisterActivity" />
