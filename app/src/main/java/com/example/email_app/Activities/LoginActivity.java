@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.email_app.R;
+import com.example.email_app.Utils.ExitDialog;
 import com.example.email_app.Utils.IntentHelper;
 import com.example.email_app.Utils.NetworkConnection;
 import com.google.android.material.textfield.TextInputEditText;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
     private NetworkConnection networkConnection;
+    private ExitDialog exitDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         View parentLayout = findViewById(android.R.id.content);
         networkConnection = new NetworkConnection(parentLayout);
+
+        exitDialog = new ExitDialog(LoginActivity.this);
     }
 
     private void userLogin() {
@@ -134,5 +138,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        exitDialog.showExitDialog();
     }
 }

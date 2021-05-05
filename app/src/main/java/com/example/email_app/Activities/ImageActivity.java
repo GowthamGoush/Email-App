@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.email_app.R;
 import com.example.email_app.Receivers.Email;
+import com.example.email_app.Utils.ExitDialog;
 import com.example.email_app.Utils.IntentHelper;
 import com.example.email_app.Utils.NetworkConnection;
 import com.google.android.material.button.MaterialButton;
@@ -24,6 +25,7 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
     private MaterialButton returnBackText;
     private FirebaseAuth mAuth;
     private NetworkConnection networkConnection;
+    private ExitDialog exitDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
 
         View parentLayout = findViewById(android.R.id.content);
         networkConnection = new NetworkConnection(parentLayout);
+
+        exitDialog = new ExitDialog(ImageActivity.this);
 
     }
 
@@ -89,5 +93,10 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
                 Logout();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        exitDialog.showExitDialog();
     }
 }
