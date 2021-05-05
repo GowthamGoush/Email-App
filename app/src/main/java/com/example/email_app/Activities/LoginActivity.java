@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.email_app.R;
 import com.example.email_app.Utils.IntentHelper;
+import com.example.email_app.Utils.NetworkConnection;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView registerText;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    private NetworkConnection networkConnection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +43,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         progressBar = findViewById(R.id.loginProgressBar);
 
         mAuth = FirebaseAuth.getInstance();
+
+        View parentLayout = findViewById(android.R.id.content);
+        networkConnection = new NetworkConnection(parentLayout);
     }
 
     private void userLogin() {
         String email = loginEmail_id.getText().toString().trim();
         String password = loginPassword.getText().toString().trim();
+
+        if (!networkConnection.isConnected(LoginActivity.this)) {
+            networkConnection.ShowNoConnection();
+            return;
+        }
 
         if (email.isEmpty()) {
             loginEmail_id.setError("Email is required");
