@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Email-App</string>
+    <string name="no_connection">No Connection</string>
 </resources>
