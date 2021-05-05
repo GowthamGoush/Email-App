@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">Email-App</string>
-    <string name="email_trigger_time">60000</string>
 </resources>
