@@ -7,6 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="false"
         android:paddingHorizontal="@dimen/paddingVeryLarge"
         android:paddingVertical="@dimen/paddingSmall">
 
@@ -14,10 +15,10 @@
             android:id="@+id/loginScreenIcon"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:src="@drawable/ic_login"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/marginSmall"
-            android:padding="@dimen/paddingVerySmall"/>
+            android:padding="@dimen/paddingVerySmall"
+            android:src="@drawable/ic_login" />
 
         <TextView
             android:id="@+id/loginScreenText"
@@ -27,9 +28,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/marginSmall"
             android:text="Sign In"
-            android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="@dimen/textVeryLarge" />
+            android:textSize="@dimen/textVeryLarge"
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/loginEmailLayout"
@@ -85,12 +86,12 @@
             android:layout_below="@id/loginPasswordLayout"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/marginVeryLarge"
+            android:background="@drawable/rounded_button"
             android:focusable="false"
             android:padding="@dimen/paddingSmall"
             android:text="Login"
             android:textColor="@color/white"
-            android:textSize="@dimen/textMedium"
-            android:background="@drawable/rounded_button" />
+            android:textSize="@dimen/textMedium" />
 
         <TextView
             android:id="@+id/loginText"
@@ -100,6 +101,7 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/marginSmall"
+            android:focusable="false"
             android:text="Don't have an account?"
             android:textSize="@dimen/textSmall" />
 
