@@ -92,7 +92,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if (user.isEmailVerified()) {
                             IntentHelper intentHelper = new IntentHelper(LoginActivity.this);
                             intentHelper.GoToImage();
-                            progressBar.setVisibility(View.GONE);
                             finish();
                         } else {
                             Toast.makeText(LoginActivity.this, "Check your email to verify your account!", Toast.LENGTH_LONG).show();
@@ -101,8 +100,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     } else {
                         loginPassword.setError("Password is incorrect");
                         loginPassword.requestFocus();
-                        progressBar.setVisibility(View.GONE);
                     }
+                    progressBar.setVisibility(View.GONE);
 
                 });
             }
