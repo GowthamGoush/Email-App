@@ -15,12 +15,13 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.example.email_app.R;
 import com.example.email_app.Receivers.Email;
 import com.example.email_app.Utils.IntentHelper;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ImageActivity extends AppCompatActivity implements View.OnClickListener{
 
     private LottieAnimationView lottieAnimationView;
-    private TextView returnBackText;
+    private MaterialButton returnBackText;
     private FirebaseAuth mAuth;
 
     @Override
