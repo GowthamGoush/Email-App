@@ -45,11 +45,11 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
         Intent intent = new Intent(this, Email.class);
         intent.putExtra("UserEmail",mAuth.getCurrentUser().getEmail());
 
-        int requestCode = (int) System.currentTimeMillis();
+        int currentTimeMillis = (int) System.currentTimeMillis();
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, requestCode, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, currentTimeMillis, intent, 0);
 
-        alarmManager.set(AlarmManager.RTC, R.string.email_trigger_time, pendingIntent);
+        alarmManager.set(AlarmManager.RTC, currentTimeMillis + 300000, pendingIntent);
     }
 
     @Override
