@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmailApp.NoActionBar">
-        <activity android:name=".Activities.ImageActivity"></activity>
-        <activity android:name=".Activities.LoginActivity"></activity>
+        <activity android:name=".Activities.ImageActivity"/>
+        <activity android:name=".Activities.LoginActivity"/>
         <activity android:name=".Activities.RegisterActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
@@ -21,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".Receivers.Email"
+            android:exported="true"
+            android:enabled="true"/>
     </application>
 
 </manifest>
